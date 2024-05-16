@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem; /* 16px + 4px(16px html 25%) = 20px */
+  padding: 1rem;
+}
+
+.card {
+  background-color: #f4f4f4;
+  border: 0.625rem solid #ccc;
+  padding: 1.25rem;
+  box-sizing: border-box;
+  text-align: center;
+  flex: 1 1 calc(33.333% - 1.25rem); /* 3 columnas quitando el gap */
+}
+
+@media (/* max-width: 45em */ width <= 720px) {
+  .card {
+    flex: 1 1 calc(50% - 1.25rem); /* 2 columnas quitando el gap */
+    background-color: deeppink;
+  }
+}
+
+@media (max-width: 320px) {
+  .card {
+    flex: 1 1 calc(100%); /* 1 columnas quitando el gap */
+    background-color: green;
+  }
+}
